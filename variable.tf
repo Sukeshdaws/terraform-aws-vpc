@@ -48,6 +48,7 @@ variable "public_subnet_cidr_tags" {
     default = {}
 }
 
+
 ### Private Subnet ####
 variable "private_subnet_cidrs" {
     type = list
@@ -62,7 +63,8 @@ variable "private_subnet_cidr_tags" {
     default = {}
 }
 
-### database Subnet ####
+
+### Database Subnet ####
 variable "database_subnet_cidrs" {
     type = list
     validation {
@@ -81,43 +83,42 @@ variable "database_subnet_group_tags" {
     default = {}
 }
 
-###  nat gateway ###
-variable "nat_gateway_subnet_cidr_tags"{
+#### Nat gateway ####
+variable "nat_gateway_tags" {
     type = map
     default = {}
 }
 
-
-### public route table###
-variable "public_route_table_tags"{
+#### Public Route table ####
+variable "public_route_table_tags" {
     type = map
     default = {}
 }
 
-### private route table###
-variable "private_route_table_tags"{
+#### Private Route table ####
+variable "private_route_table_tags" {
     type = map
     default = {}
 }
 
-### database route table###
-variable "database_route_table_tags"{
+#### Database Route table ####
+variable "database_route_table_tags" {
     type = map
     default = {}
 }
 
-variable "is_peering_required"{
-    type = bool
-    default = false
+#### Peering ####
+variable "is_peering_required" {
+  type = bool
+  default = false
 }
 
-variable "acceptor_vpc_id"{   # if it is empty lets take default vpc
-    type = string
-    default = ""
+variable "acceptor_vpc_id" {
+  type = string
+  default = ""
 }
 
-variable "vpc_peering_tags"{
-    type = map
-    default = {}
+variable "vpc_peering_tags" {
+  type = map
+  default = {}
 }
-
